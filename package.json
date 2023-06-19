@@ -1,0 +1,22 @@
+{
+  "name": "yooldo-ea-raffle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "hardhat": "^2.15.0"
+  },
+  "dependencies": {
+    "@chainlink/contracts": "^0.6.1",
+    "@nomiclabs/hardhat-etherscan": "^3.1.7",
+    "@openzeppelin/contracts": "^4.9.2",
+    "hardhat-abi-exporter": "^2.10.1",
+    "hardhat-deploy": "^0.11.31"
+  }
+}
