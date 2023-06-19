@@ -79,7 +79,7 @@ The raffle ratio is determined immediately after the smart contract deployment.
 |81-120|0.30000%|
 |121-150|0.25000%|
 |151-250|0.15000%|
-|251-350|0.00000%|
+|251-500|0.00000%|
 
 ## Raffle History
 
