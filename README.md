@@ -63,7 +63,21 @@ Feel free to reach out if you have any questions, and don't forget to check out 
 
 ## Raffle Ratio
 
-The raffle ratio is determined immediately after the smart contract deployment. The code detailing the ratio can be found in our GitHub repository at the following link: [Raffle Ratio Code](https://chat.openai.com/c/42b27712-a6c1-4066-8858-051f6e04d8ab#) (Link To Be Added)
+The raffle ratio is determined immediately after the smart contract deployment.
+
+|Place|$%|
+|--|--|
+|1-1|15.00000%|
+|2-2|7.00000%|
+|3-3|2.00000%|
+|4-20|0.85000%|
+|21-35|0.60000%|
+|36-50|0.50000%|
+|51-80|0.35000%|
+|81-120|0.30000%|
+|121-150|0.25000%|
+|151-250|0.15000%|
+|251-350|0.00000%|
 
 ## Raffle History
 
