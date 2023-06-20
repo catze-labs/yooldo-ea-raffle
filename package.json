@@ -9,14 +9,18 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
-    "hardhat": "^2.15.0"
+    "@nomicfoundation/hardhat-toolbox": "^1.0.2",
+    "hardhat": "^2.15.0",
+    "typechain": "^8.2.0"
   },
   "dependencies": {
-    "@chainlink/contracts": "^0.6.1",
+    "@chainlink/contracts": "^0.5.1",
+    "@nomicfoundation/hardhat-ethers": "^3.0.2",
     "@nomiclabs/hardhat-etherscan": "^3.1.7",
     "@openzeppelin/contracts": "^4.9.2",
+    "dotenv": "^16.3.1",
     "hardhat-abi-exporter": "^2.10.1",
-    "hardhat-deploy": "^0.11.31"
+    "hardhat-deploy": "^0.11.31",
+    "seedrandom": "^3.0.5"
   }
 }
