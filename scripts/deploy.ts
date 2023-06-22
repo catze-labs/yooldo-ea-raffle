@@ -1,21 +1,26 @@
-import { ethers, run, network } from 'hardhat';
+import { run, network } from 'hardhat';
+const hre = require('hardhat');
 
 async function main() {
     // compile our contract
     await run('compile');
 
-    const [deployer] = await ethers.getSigners();
+    // const [deployer] = await hre.ethers.getSigners();
 
-    const Raffle = await ethers.getContractFactory('Raffle');
+    const Raffle = await hre.ethers.getContractFactory('Raffle');
     const raffle = await Raffle.deploy();
 
-    // We wait for our contract to be mined
-    await raffle.deployed();
+    console.log('Deploying Raffle...');
 
-    console.log('Raffle deployed to:', raffle.address);
+    // We wait for our contract to be mined
+    await raffle.waitForDeployment();
+
+    const raffleAddress = await raffle.getAddress();
+
+    console.log('Raffle deployed to:', raffleAddress);
 
     console.log(`
-        npx hardhat verify --network ${network.name} ${raffle.address}
+        npx hardhat verify --network ${network.name} ${raffleAddress}
   `);
 }
 
