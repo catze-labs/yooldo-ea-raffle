@@ -1,9 +1,5 @@
 require("dotenv").config();
-require("@nomiclabs/hardhat-etherscan");
 require('hardhat-abi-exporter');
-import '@typechain/hardhat'
-import '@nomicfoundation/hardhat-ethers'
-import '@nomicfoundation/hardhat-chai-matchers'
 
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
