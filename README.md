@@ -2,15 +2,42 @@
 
 Welcome to the Yooldo Early Access raffle! We're excited to share this opportunity with our community and have made every effort to ensure the process is fair, transparent, and accessible. Below, you'll find a detailed explanation of how the raffle works and the steps we've taken to maintain its integrity.
 
-## What’s The Raffle of Yooldo’s Early Access?
+## Questions
 
-The Yooldo Early Access raffle is our way of celebrating the launch of our platform. Through this event, we're distributing 10,000 OAS tokens each day to our community. The raffle is executed on the BNB Chain, and the odds have been predetermined and hard-coded into our smart contract.
+### 1. What is the Yooldo Early Access Raffle?
 
-### Raffle Odds Disclosure
+The Yooldo Early Access raffle is a special event to celebrate the launch of our platform. We're giving away OAS tokens each day to our community. The event is carried out on the BNB Chain and the odds are preset and coded into the smart contract to ensure fairness.
 
-The odds for our raffle are fixed and will be publicly disclosed for full transparency. We've coded these odds directly into the raffle's smart contract.
+### 2. How does the raffle work?
 
-### Code Release
+In the raffle, participants have an opportunity to win OAS tokens based on preset odds. These odds are hard-coded into the smart contract, which means they cannot be altered after the event starts. Winners are chosen randomly by the smart contract.
+
+### 3. How are the odds set for the raffle?
+
+The odds are determined and hardcoded into the smart contract upon its creation. You can find a detailed breakdown of the odds in the raffle documentation under the section titled 'Raffle Ratio'.
+
+### 4. How do I know if I won?
+
+After each round of the raffle, we will announce the winners and share transaction addresses for verification. If you're among the winners, your address will be included in the announcement.
+Hard to read? Don't worry. We'll provide details at event page of Yooldo, just like 2nd CBT event.
+
+### 5. What are OAS tokens?
+
+OAS tokens are the native currency for the Oasys. Oasys and Yooldo have a connection through Yooldo Verse, one of verse-layer participants.
+
+### 6. How do I participate in the raffle?
+
+In order to participate in the raffle, you will need to follow the specific instructions provided in the raffle announcement from discord.
+
+### 7. How can I check the result of past raffles?
+
+Past raffles results can be checked under the 'Raffle History' section of the documentation. Here, we provide the contract address link and the transaction link for each raffle.
+
+### 8. How can I be sure this raffle is fair?
+
+We strive for the highest degree of transparency and fairness in our raffle. The odds are set and hard-coded into the smart contract, which anyone can review on our GitHub page. Additionally, we make public announcements about the raffle's process and results.
+
+## Code Release
 
 The source code for our raffle smart contract is publicly available on our [GitHub page](https://github.com/catze-labs/yooldo-ea-raffle). This allows anyone to review the mechanisms of the raffle, providing a level of transparency that holds us accountable to our community.
 
@@ -45,29 +72,11 @@ The source code for our raffle smart contract is publicly available on our [GitH
 		totalRatio = totalRatio.add(ratio[i]);
 	}
 
-### Pre-Announcement
-
-Prior to the raffle, we will share the spreadsheet link showing the odds and the GitHub link to the source code.
-
-### Raffle Execution
-
-The raffle is executed on the BNB Chain. We will announce the completion of each raffle round and share transaction addresses where the details can be verified.
-
-### Announcement
-
-After each raffle round, we will announce the winners and share the transaction addresses for verification.
-
-## How Do We Ensure Fairness?
-
-Fairness is one of our top priorities for the Yooldo Early Access raffle. As part of this commitment, we have hard-coded the raffle odds into our smart contract and have made this information publicly available. In addition to this, our code release and round-by-round announcements provide a transparent view of the raffle's process and results.
-
-Feel free to reach out if you have any questions, and don't forget to check out our [GitHub page](https://github.com/catze-labs/yooldo-ea-raffle).
-
 ## Raffle Ratio
 
 The raffle ratio is determined immediately after the smart contract deployment.
 
-|Place|$%|
+|Place|Probability of winning|
 |--|--|
 |1-1|15.00000%|
 |2-2|7.00000%|
@@ -92,3 +101,7 @@ To Be Added (TBA)
 |1st|TBA|
 |2nd|TBA|
 |...|  ...
+
+## Contact Us
+
+If you have any additional questions, feel free to reach out to us through Discord. Your understanding and enjoyment of our events are our top priority.
