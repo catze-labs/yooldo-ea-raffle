@@ -61,11 +61,10 @@ async function main() {
     // const tickets = getMultipleRandomAddresses(walletCount);
 
     // Read the TSV file
-    const tsvData = fs.readFileSync(appRoot + '/tsv/2023-06-17.tsv', 'utf8');
+    const tsvData = fs.readFileSync(appRoot + `${process.env.TSV}`, 'utf8');
 
     // declare JSON
     const tickets: any[] = [];
-    const places: any[] = [];
 
     // filter out the data we don't need and add walletAddress and usedRaffleCount to the array
     tsvData.split('\n').map((line) => {
@@ -79,14 +78,6 @@ async function main() {
     // Print the transformed in JSON
     console.log(tickets);
 
-    // init places with index with length of tickets
-    for (let i = 1; i <= tickets.length; i++) {
-        places.push(i);
-    }
-
-    // Print the transformed in JSON
-    console.log(places);
-
     // Get the deployed contract using the contract address
     const raffleAttached = Raffle.attach(`${process.env.RAFFLE_CONTRACT_ADDRESS}`);
 
@@ -95,11 +86,18 @@ async function main() {
     // await tx.wait();
     // console.log('setTickets done');
 
-    // setTickets with 100 wallets each for ten times
-    for (let i = 0; i < tickets.length / 100; i++) {
-        const tx = await raffleAttached.addTickets(tickets.slice(i * 100, (i + 1) * 100));
+    // if tickets.length is less than 100, setTickets
+    if (tickets.length < 100) {
+        const tx = await raffleAttached.addTickets(tickets);
         await tx.wait();
         console.log('addTickets done');
+    } else {
+        // setTickets with 100 wallets each for ten times
+        for (let i = 0; i < tickets.length / 100; i++) {
+            const tx = await raffleAttached.addTickets(tickets.slice(i * 100, (i + 1) * 100));
+            await tx.wait();
+            console.log('addTickets done');
+        }
     }
 
     // setPool
@@ -132,7 +130,20 @@ async function main() {
     // });
 
     const shuffledTickets = shuffleWithSeed(tickets, parseInt(seedNumber, 16));
-    const shuffledPlaces = shuffleWithSeed(places, parseInt(seedNumber, 16));
+
+    const places: number[] = [];
+
+    // init places with index with length of all possible tickets
+    for (let i = 1; i <= 500; i++) {
+        places.push(i);
+    }
+
+    const rng = new Lehmer(parseInt(seedNumber, 16));
+    const result = places.map((a) => ({ sort: rng.nextFloat(), value: a }));
+    result.sort((a, b) => a.sort - b.sort);
+    const shuffledPlaces = result.map((a) => a.value);
+
+    // const shuffledPlaces = places.map((a) => ({ sort: new Lehmer(parseInt(seedNumber, 16)).nextFloat(), value: a })).slice(0, tickets.length);
 
     console.log(shuffledTickets);
     console.log(shuffledPlaces);
@@ -152,10 +163,17 @@ async function main() {
         console.log('addShuffledPlaces done');
     }
 
-    // setPlaceByAddress
-    const tx4 = await raffleAttached.setPlaceByAddress();
-    await tx4.wait();
-    console.log('setPlaceByAddress done');
+    // // setPlaceByAddress
+    // const tx4 = await raffleAttached.setPlaceByAddress();
+    // await tx4.wait();
+    // console.log('setPlaceByAddress done');
+
+    let shuffledTicketsTSV = '';
+    for (let i = 0; i < shuffledTickets.length; i++) {
+        shuffledTicketsTSV += `${shuffledTickets[i]}\t${(Number (await raffleAttached.ratio(shuffledPlaces[i])))}\n`;
+    }
+    fs.writeFileSync(appRoot + '/result/shuffledTickets.tsv', shuffledTicketsTSV);
+
 }
 
 main()
@@ -172,3 +190,4 @@ main()
 // npx hardhat run --network oasys_testnet scripts/initialize.ts 
 // npx hardhat run --network yooldo_verse_testnet scripts/initialize.ts
 // npx hardhat run --network polygon_testnet scripts/initialize.ts
+// npx hardhat run --network bsc_mainnet scripts/initialize.ts
