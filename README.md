@@ -120,9 +120,11 @@ The raffle ratio is determined immediately after the smart contract deployment.
 
 ## Raffle History
 
-### Contract Address Link
+### Smart Contract
 
-To Be Added (TBA)
+[https://bscscan.com/address/0x8005f37A291F3C965FeC1A77C99393ea6581C142](https://bscscan.com/address/0x8005f37A291F3C965FeC1A77C99393ea6581C142)
+
+ ### Details
 
 |Raffle|Transaction(TX) Link|
 |--|--|
