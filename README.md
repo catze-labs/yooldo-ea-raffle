@@ -1,10 +1,10 @@
 # YOOLDO-EA-RAFFLE: A Brief Guide
 
+Welcome to the Yooldo Early Access raffle! We're excited to share this opportunity with our community and have made every effort to ensure the process is fair, transparent, and accessible. Below, you'll find a detailed explanation of how the raffle works and the steps we've taken to maintain its integrity.
+
 - [Explaining the Raffle Data](https://github.com/catze-labs/yooldo-ea-raffle/tree/main/tsv)
 - [Understanding the  `Raffle.sol`  contract](https://github.com/catze-labs/yooldo-ea-raffle/tree/main/contracts)
 - [Understanding the  `initialize.ts`  script, core of Raffle Process](https://github.com/catze-labs/yooldo-ea-raffle/tree/main/scripts)
-
-Welcome to the Yooldo Early Access raffle! We're excited to share this opportunity with our community and have made every effort to ensure the process is fair, transparent, and accessible. Below, you'll find a detailed explanation of how the raffle works and the steps we've taken to maintain its integrity.
 
 ## Questions
 
@@ -40,6 +40,30 @@ Past raffles results can be checked under the 'Raffle History' section of the do
 ### 8. How can I be sure this raffle is fair?
 
 We strive for the highest degree of transparency and fairness in our raffle. The odds are set and hard-coded into the smart contract, which anyone can review on our GitHub page. Additionally, we make public announcements about the raffle's process and results.
+
+### 9. Can I participate in the raffle more than once?
+
+Yes, you are allowed to participate in each round of the raffle till using all raffle tickets from playing TroublePunk.
+
+### 10. What happens if I win? How do I claim my OAS tokens?
+
+If you win, the OAS tokens will be transferred to your associated wallet connected to Yooldo. You don't need to manually claim them. However, you may need to add the OAS token contract to your wallet to view your OAS tokens.
+
+### 11. I’ve won but my OAS tokens aren’t showing in my wallet, what should I do?
+
+Firstly, ensure that you have added the OAS token contract to your wallet. If your tokens still do not appear, contact us through Discord and provide your wallet address. We will investigate and resolve the issue as quickly as possible.
+
+### 12. How many OAS tokens could I potentially win?
+
+The number of OAS tokens you can win depends on the prize pool for a particular round and the predefined odds set for the raffle. The precise distribution can be found in the 'Raffle Ratio' section of our documentation.
+
+### 13. Can I sell my OAS tokens?
+
+Yes, OAS tokens can be traded or sold in Central Exchange or Defi.
+
+### 14. What if I still have unanswered questions?
+
+If you have any additional questions or concerns, don't hesitate to reach out to us through Discord. We are here to help ensure your experience with the Yooldo Early Access raffle is a positive one.
 
 ## Code Release
 
