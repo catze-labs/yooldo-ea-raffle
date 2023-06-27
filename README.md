@@ -1,5 +1,9 @@
 # YOOLDO-EA-RAFFLE: A Brief Guide
 
+- [Explaining the Raffle Data](https://github.com/catze-labs/yooldo-ea-raffle/tree/main/tsv)
+- [Understanding the  `Raffle.sol`  contract](https://github.com/catze-labs/yooldo-ea-raffle/tree/main/contracts)
+- [Understanding the  `initialize.ts`  script, core of Raffle Process](https://github.com/catze-labs/yooldo-ea-raffle/tree/main/scripts)
+
 Welcome to the Yooldo Early Access raffle! We're excited to share this opportunity with our community and have made every effort to ensure the process is fair, transparent, and accessible. Below, you'll find a detailed explanation of how the raffle works and the steps we've taken to maintain its integrity.
 
 ## Questions
