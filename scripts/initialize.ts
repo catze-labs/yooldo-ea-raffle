@@ -7,7 +7,7 @@ const appRoot = require('app-root-path');
 
 async function main() {
 
-    const web3 = new Web3(`${process.env.POLYGON_TESTNET_RPC_URL}`);
+    const web3 = new Web3(`${process.env.BSC_MAINNET_RPC_URL}`);
 
     // compile our contract
     await run('compile');
@@ -79,7 +79,7 @@ async function main() {
     console.log(tickets);
 
     // Get the deployed contract using the contract address
-    const raffleAttached = Raffle.attach(`${process.env.RAFFLE_CONTRACT_ADDRESS}`);
+    const raffleAttached = Raffle.attach(`${process.env.RAFFLE_CONTRACT_ADDRESS_YOOLDO}`);
 
     // // setTickets
     // const tx = await raffleAttached.setTickets(tickets);
@@ -116,7 +116,7 @@ async function main() {
     const contract = new web3.eth.Contract(contractABI, contractAddress);
 
     // const seedNumber = '';
-    const seedNumber: string = await contract.methods.seedNumber().call();
+    const seedNumber: string = await raffleAttached.seedNumber();
 
     // contract.events.seedNumberSet(async (error: any, event: { returnValues: { seedNumber: { toString: () => any; }; }; }) => {
     //     if (error) {
@@ -145,8 +145,11 @@ async function main() {
 
     // const shuffledPlaces = places.map((a) => ({ sort: new Lehmer(parseInt(seedNumber, 16)).nextFloat(), value: a })).slice(0, tickets.length);
 
+    // slice shuffledPlaces with shuffledTickets.length
+    const shuffledPlacesSliced = shuffledPlaces.slice(0, shuffledTickets.length);
+
     console.log(shuffledTickets);
-    console.log(shuffledPlaces);
+    console.log(shuffledPlacesSliced);
 
 
     // addShuffledTickets
@@ -158,7 +161,7 @@ async function main() {
 
     // addShuffledPlaces
     for (let i = 0; i < tickets.length / 100; i++) {
-        const tx = await raffleAttached.addShuffledPlaces(shuffledPlaces.slice(i * 100, (i + 1) * 100));
+        const tx = await raffleAttached.addShuffledPlaces(shuffledPlacesSliced.slice(i * 100, (i + 1) * 100));
         await tx.wait();
         console.log('addShuffledPlaces done');
     }
@@ -168,11 +171,11 @@ async function main() {
     // await tx4.wait();
     // console.log('setPlaceByAddress done');
 
-    let shuffledTicketsTSV = '';
-    for (let i = 0; i < shuffledTickets.length; i++) {
-        shuffledTicketsTSV += `${shuffledTickets[i]}\t${(Number (await raffleAttached.ratio(shuffledPlaces[i])))}\n`;
-    }
-    fs.writeFileSync(appRoot + '/result/shuffledTickets.tsv', shuffledTicketsTSV);
+    // let shuffledTicketsTSV = '';
+    // for (let i = 0; i < shuffledTickets.length; i++) {
+    //     shuffledTicketsTSV += `${shuffledTickets[i]}\t${(Number (await raffleAttached.ratio(shuffledPlaces[i])))}\n`;
+    // }
+    // fs.writeFileSync(appRoot + '/result/shuffledTickets.tsv', shuffledTicketsTSV);
 
 }
 
