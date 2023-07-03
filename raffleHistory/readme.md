@@ -20,7 +20,17 @@ Here is an example of what the wallet address and place pairs look like:
 0xea775c29965a4f1cf581eace8a2d0595e19b9171  160
 ```
 
-In this example, the user with the wallet address `0x775524392647631d7219b3a1e6b328cb4f9e3ac2` won the 149th, 147th, and 146th places in this raffle.
+This means that the owner of the wallet address `0x775524392647631d7219b3a1e6b328cb4f9e3ac2` won the 146th, 147th, and 149th places. According to the probability table, the winning probability for places 121-150 is 0.25%. Since this user won three times in this range, they get 0.25% * 3 = 0.75% of the daily raffle pool. For a pool of 10,000, that equals 75.
+
+## Why Participate in the Raffle?
+
+Our game is not just about battling and levelling up; it's also about participating in events, including our thrilling raffles! Participating in these raffles offers an exciting opportunity to win big, and the transparent nature of the process ensures that every player has a fair chance. Moreover, the raffle also serves as a fun break from the regular game routine.
+
+Participating in the raffle could win you substantial in-game rewards, thereby enhancing your overall gaming experience. So why wait? Get your game face on, collect raffle tickets, and increase your chances of winning!
+
+## Have Fun and Good Luck!
+
+We encourage everyone to join our events and games. Your participation not only adds to the fun and excitement, but it also contributes to the rich, dynamic environment of our gaming community. And remember, every raffle offers new opportunities, so keep playing, keep participating, and most importantly, keep having fun. Good luck with your next raffle!
 
 ## Probability of Winning by Place
 
