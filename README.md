@@ -2,7 +2,8 @@
 
 Welcome to the Yooldo Early Access raffle! We're excited to share this opportunity with our community and have made every effort to ensure the process is fair, transparent, and accessible. Below, you'll find a detailed explanation of how the raffle works and the steps we've taken to maintain its integrity.
 
-- [Explaining the Raffle Data](https://github.com/catze-labs/yooldo-ea-raffle/tree/main/tsv)
+- [Explaining the Raffle Data](https://github.com/catze-labs/yooldo-ea-raffle/tree/main/usedRaffleTicketHistory)
+- [Diving Into the Raffle History](https://github.com/catze-labs/yooldo-ea-raffle/tree/main/raffleHistory)
 - [Understanding the  `Raffle.sol`  contract](https://github.com/catze-labs/yooldo-ea-raffle/tree/main/contracts)
 - [Understanding the  `initialize.ts`  script, core of Raffle Process](https://github.com/catze-labs/yooldo-ea-raffle/tree/main/scripts)
 
@@ -69,36 +70,36 @@ If you have any additional questions or concerns, don't hesitate to reach out to
 
 The source code for our raffle smart contract is publicly available on our [GitHub page](https://github.com/catze-labs/yooldo-ea-raffle). This allows anyone to review the mechanisms of the raffle, providing a level of transparency that holds us accountable to our community.
 
-	ratio = new uint256[](500);
-	totalRatio = 0;
+ ratio = new uint256[](500);
+ totalRatio = 0;
 
-	// Set the ratio array according to the conditions
-	for(uint i = 0; i < ratio.length; i++){
-		if(i < 1){
-			ratio[i] = 1500; // 15.00000%
-		} else if(i < 2){
-			ratio[i] = 700; // 7.00000%
-		} else if(i < 3){
-			ratio[i] = 200; // 2.00000%
-		} else if(i < 20){
-			ratio[i] = 85; // 0.85000%
-		} else if(i < 35){
-			ratio[i] = 60; // 0.60000%
-		} else if(i < 50){
-			ratio[i] = 50; // 0.50000%
-		} else if(i < 80){
-			ratio[i] = 35; // 0.35000%
-		} else if(i < 120){
-			ratio[i] = 30; // 0.30000%
-		} else if(i < 150){
-			ratio[i] = 25; // 0.25000%
-		} else if(i < 250){
-			ratio[i] = 15; // 0.15000%
-		} else {
-			ratio[i] = 0; // 0%
-		}
-		totalRatio = totalRatio.add(ratio[i]);
-	}
+ // Set the ratio array according to the conditions
+ for(uint i = 0; i < ratio.length; i++){
+  if(i < 1){
+   ratio[i] = 1500; // 15.00000%
+  } else if(i < 2){
+   ratio[i] = 700; // 7.00000%
+  } else if(i < 3){
+   ratio[i] = 200; // 2.00000%
+  } else if(i < 20){
+   ratio[i] = 85; // 0.85000%
+  } else if(i < 35){
+   ratio[i] = 60; // 0.60000%
+  } else if(i < 50){
+   ratio[i] = 50; // 0.50000%
+  } else if(i < 80){
+   ratio[i] = 35; // 0.35000%
+  } else if(i < 120){
+   ratio[i] = 30; // 0.30000%
+  } else if(i < 150){
+   ratio[i] = 25; // 0.25000%
+  } else if(i < 250){
+   ratio[i] = 15; // 0.15000%
+  } else {
+   ratio[i] = 0; // 0%
+  }
+  totalRatio = totalRatio.add(ratio[i]);
+ }
 
 ## Raffle Ratio
 
@@ -124,13 +125,12 @@ The raffle ratio is determined immediately after the smart contract deployment.
 
 [https://bscscan.com/address/0x8005f37A291F3C965FeC1A77C99393ea6581C142](https://bscscan.com/address/0x8005f37A291F3C965FeC1A77C99393ea6581C142)
 
- ### Details
+### Details
 
-|Raffle|Transaction(TX) Link|
-|--|--|
-|1st|TBA|
-|2nd|TBA|
-|...|  ...
+| Raffle | `Add Tickets` TX Links and Logs | `Set Pool` TX Link and Log | `Set Seed Number` TX Link and Log | `Add Shuffled Tickets` TX Links and Logs | `Add Shuffled Places` TX Links and Logs | `Store Raffle Result` TX Link |
+|--------|-------------------------------|-------------------------|---------------------------------|---------------------------------------|-------------------------------------|------------------------------------|
+| 1st    | [TxA](https://bscscan.com/tx/0xaa0af691fd33bb5cbeeca0f5a3becdd3d8ee6486eb5dde6ea7091260508c1174) [TxB](https://bscscan.com/tx/0xee7afe613c408aa240e6916a38e18266cd703b660a907af77f17dd96bd57ea21) [TxC](https://bscscan.com/tx/0xb976606b8baca72f7c11e329f08c9343ddde88b5558597a56c2acee1af6b715a) / [LogA](https://bscscan.com/tx/0xaa0af691fd33bb5cbeeca0f5a3becdd3d8ee6486eb5dde6ea7091260508c1174#eventlog) [LogB](https://bscscan.com/tx/0xee7afe613c408aa240e6916a38e18266cd703b660a907af77f17dd96bd57ea21#eventlog) [LogC](https://bscscan.com/tx/0xb976606b8baca72f7c11e329f08c9343ddde88b5558597a56c2acee1af6b715a#eventlog)            | [Tx](https://bscscan.com/tx/0xa0a880ccddef0f007414a3203a42ffba845ca140ac78bba8722c27e77fbf7ba8) / [Log](https://bscscan.com/tx/0xa0a880ccddef0f007414a3203a42ffba845ca140ac78bba8722c27e77fbf7ba8#eventlog)      | [Tx](https://bscscan.com/tx/0x5c9fe2287f221766a9ba413782d04a38e63693ca6ec48bc67f1c2d1514107228) / [Log](https://bscscan.com/tx/0x5c9fe2287f221766a9ba413782d04a38e63693ca6ec48bc67f1c2d1514107228#eventlog)              | [TxA](https://bscscan.com/tx/0xefae4908acedda7d5b775288bfd703bf28be4468a4bb2704894a39c9acd8eac7) [TxB](https://bscscan.com/tx/0xe3dbee48bd57e3cda4d636c9c93f2b15e69bfd7b9c631b047862fce980eb6a7e) [TxC](https://bscscan.com/tx/0xd6fb15097a2bb2183564b49db2b57b106c87f9656ae04dcb3ddf85af8a53510e) / [LogA](https://bscscan.com/tx/0xefae4908acedda7d5b775288bfd703bf28be4468a4bb2704894a39c9acd8eac7#eventlog) [LogB](https://bscscan.com/tx/0xe3dbee48bd57e3cda4d636c9c93f2b15e69bfd7b9c631b047862fce980eb6a7e#eventlog) [LogC](https://bscscan.com/tx/0xd6fb15097a2bb2183564b49db2b57b106c87f9656ae04dcb3ddf85af8a53510e#eventlog)                    | [TxA](https://bscscan.com/tx/0x45b3797dddfab091c2aaaf0eb82ecaf7bb44f03ec10e81b0986ea70e3deb00f7) [TxB](https://bscscan.com/tx/0xee7afe613c408aa240e6916a38e18266cd703b660a907af77f17dd96bd57ea21) [TxC](https://bscscan.com/tx/0xc94e58d3ab461b95a773b20b3518d5978c6b2db85733a7281833c33fe10f59b5) / [LogA](https://bscscan.com/tx/0x9a6d40abf93d2955a640bc08ffb332f6f480521d73b0f56bf05498e2ed85584d#eventlog) [LogB](https://bscscan.com/tx/0x45b3797dddfab091c2aaaf0eb82ecaf7bb44f03ec10e81b0986ea70e3deb00f7#eventlog) [LogC](https://bscscan.com/tx/0xc94e58d3ab461b95a773b20b3518d5978c6b2db85733a7281833c33fe10f59b5#eventlog)                  | [Tx](https://bscscan.com/tx/0x45bc31e3e0751f7203b4b1a1a2c83456838f1011225a9b72b0ba1f2e1c1ada57)                                |
+|...     |...                            |...                      |...                               |...                                   |...                                 |...                                 |
 
 ## Contact Us
 
