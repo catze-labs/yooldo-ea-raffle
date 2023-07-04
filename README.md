@@ -74,36 +74,36 @@ If you have any additional questions or concerns, don't hesitate to reach out to
 
 The source code for our raffle smart contract is publicly available on our [GitHub page](https://github.com/catze-labs/yooldo-ea-raffle). This allows anyone to review the mechanisms of the raffle, providing a level of transparency that holds us accountable to our community.
 
- ratio = new uint256[](500);
- totalRatio = 0;
+ 	ratio = new uint256[](500);
+ 	totalRatio = 0;
 
- // Set the ratio array according to the conditions
- for(uint i = 0; i < ratio.length; i++){
-  if(i < 1){
-   ratio[i] = 1500; // 15.00000%
-  } else if(i < 2){
-   ratio[i] = 700; // 7.00000%
-  } else if(i < 3){
-   ratio[i] = 200; // 2.00000%
-  } else if(i < 20){
-   ratio[i] = 85; // 0.85000%
-  } else if(i < 35){
-   ratio[i] = 60; // 0.60000%
-  } else if(i < 50){
-   ratio[i] = 50; // 0.50000%
-  } else if(i < 80){
-   ratio[i] = 35; // 0.35000%
-  } else if(i < 120){
-   ratio[i] = 30; // 0.30000%
-  } else if(i < 150){
-   ratio[i] = 25; // 0.25000%
-  } else if(i < 250){
-   ratio[i] = 15; // 0.15000%
-  } else {
-   ratio[i] = 0; // 0%
-  }
-  totalRatio = totalRatio.add(ratio[i]);
- }
+ 	// Set the ratio array according to the conditions
+	for(uint i = 0; i < ratio.length; i++){
+		if(i < 1){
+			ratio[i] = 1500; // 15.00000%
+		} else if(i < 2){
+			ratio[i] = 700; // 7.00000%
+		} else if(i < 3){
+			ratio[i] = 200; // 2.00000%
+		} else if(i < 20){
+			ratio[i] = 85; // 0.85000%
+		} else if(i < 35){
+			ratio[i] = 60; // 0.60000%
+		} else if(i < 50){
+			ratio[i] = 50; // 0.50000%
+		} else if(i < 80){
+			ratio[i] = 35; // 0.35000%
+		} else if(i < 120){
+			ratio[i] = 30; // 0.30000%
+		} else if(i < 150){
+			ratio[i] = 25; // 0.25000%
+		} else if(i < 250){
+			ratio[i] = 15; // 0.15000%
+		} else {
+			ratio[i] = 0; // 0%
+		}
+		totalRatio = totalRatio.add(ratio[i]);
+	}
 
 ## Raffle Ratio
 
