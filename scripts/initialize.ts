@@ -134,8 +134,14 @@ async function main() {
     const places: number[] = [];
 
     // init places with index with length of all possible tickets
-    for (let i = 1; i <= 500; i++) {
-        places.push(i);
+    if (tickets.length < 500) {
+        for (let i = 1; i <= 500; i++) {
+            places.push(i);
+        }
+    } else {
+        for (let i = 1; i <= tickets.length; i++) {
+            places.push(i);
+        }
     }
 
     const rng = new Lehmer(parseInt(seedNumber, 16));
@@ -165,6 +171,13 @@ async function main() {
         await tx.wait();
         console.log('addShuffledPlaces done');
     }
+
+    // write me tsv files with shuffledTickets and shuffledPlaces sliced 100 each
+    let shuffledTicketsTSV = '';
+    for (let i = 0; i < shuffledTickets.length; i++) {
+        shuffledTicketsTSV += `${shuffledTickets[i]}\t${shuffledPlacesSliced[i]}\n`;
+    }
+    fs.writeFileSync(appRoot + '/shuffledTickets.tsv', shuffledTicketsTSV);
 
     // // setPlaceByAddress
     // const tx4 = await raffleAttached.setPlaceByAddress();
