@@ -144,12 +144,7 @@ async function main() {
         }
     }
 
-    const rng = new Lehmer(parseInt(seedNumber, 16));
-    const result = places.map((a) => ({ sort: rng.nextFloat(), value: a }));
-    result.sort((a, b) => a.sort - b.sort);
-    const shuffledPlaces = result.map((a) => a.value);
-
-    // const shuffledPlaces = places.map((a) => ({ sort: new Lehmer(parseInt(seedNumber, 16)).nextFloat(), value: a })).slice(0, tickets.length);
+    const shuffledPlaces = shuffleWithSeed(shuffleWithSeed(places, parseInt(seedNumber, 16)), parseInt(seedNumber, 16));
 
     // slice shuffledPlaces with shuffledTickets.length
     const shuffledPlacesSliced = shuffledPlaces.slice(0, shuffledTickets.length);
